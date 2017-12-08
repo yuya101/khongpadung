@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:src="@drawable/continueshopping"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/continueShoppingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="#000"
+                android:text="@string/cart_continue_shopping_text"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"/>
+
+            <TableLayout
+                android:id="@+id/cartShowProductTableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </TableLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cart_transport_price_text"
+                    android:textColor="@color/blackGray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_15_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cart_free_text"
+                    android:gravity="center"
+                    android:textColor="@color/blackGray"
+                    android:textSize="@dimen/text_17_size"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cart_all_product_list_price"
+                    android:textColor="@color/blackGray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_15_size"/>
+
+                <TextView
+                    android:id="@+id/cartSummaryPointTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:textColor="@color/blackGray"
+                    android:textSize="@dimen/text_17_size"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cart_member_remain_point_text"
+                    android:textColor="@color/blackGray"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_15_size"/>
+
+                <TextView
+                    android:id="@+id/cartMemberRemainPointTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:textColor="@color/blackGray"
+                    android:textSize="@dimen/text_17_size"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/cartPolicyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center"
+                android:text="@string/policy_button_text"
+                android:textColor="@color/blackGray"
+                android:textStyle="italic"
+                android:padding="@dimen/text_15_size"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/background_bottom_layout_height"
+        android:background="#54b948"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:src="@drawable/cashmachinelogo"
+            android:layout_gravity="end|center"
+            android:gravity="end|center"
+            android:layout_weight="0.4"
+            android:padding="0dp"/>
+
+        <Button
+            android:id="@+id/cashOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="ยืนยันการสั่งสินค้า"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/text_20_size"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

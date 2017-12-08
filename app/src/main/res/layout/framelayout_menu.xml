@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/menubackground"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/menu_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        android:src="@drawable/splash_title"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"/>
+
+    <ImageView
+        android:id="@+id/bottomline_section_under_policy"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_logo" />
+
+    <ImageButton
+        android:id="@+id/home_icon_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomline_section_under_policy"
+        app:srcCompat="@drawable/home" />
+
+    <Button
+        android:id="@+id/home_text_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="หน้าแรก"
+        android:textColor="@color/blackGray"
+        android:textSize="@dimen/menu_text_button"
+        android:gravity="left"
+        app:layout_constraintBottom_toBottomOf="@+id/home_icon_ib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/home_icon_ib"
+        app:layout_constraintTop_toTopOf="@+id/home_icon_ib" />
+
+    <ImageButton
+        android:id="@+id/product_icon_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_icon_ib"
+        app:srcCompat="@drawable/menu_product" />
+
+    <Button
+        android:id="@+id/product_text_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:gravity="left"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="สินค้า"
+        android:textColor="@color/blackGray"
+        android:textSize="@dimen/menu_text_button"
+        app:layout_constraintBottom_toBottomOf="@+id/product_icon_ib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/product_icon_ib"
+        app:layout_constraintTop_toTopOf="@+id/product_icon_ib" />
+
+    <ImageButton
+        android:id="@+id/about_icon_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_icon_ib"
+        app:srcCompat="@drawable/menu_about" />
+
+    <Button
+        android:id="@+id/about_text_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="เกี่ยวกับ"
+        android:textColor="@color/blackGray"
+        android:textSize="@dimen/menu_text_button"
+        android:gravity="left"
+        app:layout_constraintBottom_toBottomOf="@+id/about_icon_ib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/about_icon_ib"
+        app:layout_constraintTop_toTopOf="@+id/about_icon_ib" />
+
+    <ImageButton
+        android:id="@+id/activity_icon_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_icon_ib"
+        app:srcCompat="@drawable/menu_activity" />
+
+    <Button
+        android:id="@+id/activity_text_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:gravity="left"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="กิจกรรมภายในงาน"
+        android:textColor="@color/blackGray"
+        android:textSize="@dimen/menu_text_button"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_icon_ib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_icon_ib"
+        app:layout_constraintTop_toTopOf="@+id/activity_icon_ib" />
+
+    <ImageButton
+        android:id="@+id/map_icon_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_icon_ib"
+        app:srcCompat="@drawable/menu_map" />
+
+    <Button
+        android:id="@+id/map_text_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@null"
+        android:gravity="left"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="แผนที่"
+        android:textColor="@color/blackGray"
+        android:textSize="@dimen/menu_text_button"
+        app:layout_constraintBottom_toBottomOf="@+id/map_icon_ib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/map_icon_ib"
+        app:layout_constraintTop_toTopOf="@+id/map_icon_ib" />
+
+
+</android.support.constraint.ConstraintLayout>

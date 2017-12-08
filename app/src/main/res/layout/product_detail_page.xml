@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/productDetailImageIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sk2"
+                />
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SK-II SKIN SIGNATURE 3D REDEFINING MASK"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/blackGray"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/ivProductDetailStar1"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/ivProductDetailStar2"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/ivProductDetailStar3"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/ivProductDetailStar4"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/ivProductDetailStar5"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/rateCountShowTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(69)"
+                    android:textColor="@color/blackGray"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/overlay_color"/>
+
+            <TextView
+                android:text="@string/product_detail_property_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="17dp"
+                android:textColor="@color/blackGray"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/productDetailPropertyContentTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/blackGray"
+                android:text="ESSENTIAL POWER Rich Cream มีส่วนผสมของอะคาแน็กซ์ คอมเพล็กซ์นวัตกรรมใหม่ที่สามารถซึมซาบลึกลงสู่ชั้นผิวเพื่อบำรุงผิวให้ดีขึ้นจากภายใน ให้ความชุ่มชื้นแก่ผิวทันทีที่ใช้ ช่วยลดริ้วรอยแห่งวัยที่ชัดเจน ผิวหน้ากระชับขึ้นอย่างเห็นได้ชัดภายใน 2 สัปดาห์ ให้คุณสัมผัสประสบการณ์ผิวหน้าแลดูอ่อนเยาว์ดุจความงามแห่งกาลเวลา 10 ปี
+
+ครีมลดเลือนริ้วรอยสูตรเข้มข้นที่อุดมด้วยสารสกัด Acanax complex*, พิเทร่าTM และสารบำรุงผิวที่มากกว่า SK-II เอ็สเซ็นเชี่ยล พาวเวอร์ถึง 49% เพื่อการบำรุงที่เข้มข้น จัดการกับปัญหาริ้วรอยได้อย่างมีประสิทธิภาพ ทั้งความกระชับ ริ้วรอย ความแห้งกร้าน และผิวที่หย่อนคล้อย* *ประกอบด้วย Stem-Acanax และพิเทร่าTM **จากผลการทดสอบทางคลินิกกับอาสาสมัครจำนวน 47 คน ที่บริษัทพีแอนด์จี ประเทศญี่ปุ่น เดือนกุมภาพันธ์ พ.ศ. 2554 เพียง 2 สัปดาห์ ใบหน้าดูกระชับขึ้นอย่างเห็นได้"/>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/overlay_color"/>
+
+
+
+            <TextView
+                android:text="รีวิวและการให้คะแนน"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="17dp"
+                android:textColor="@color/blackGray"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/productDetailReviewTopicTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="สินค้าคุณภาพดีมาก จัดส่งเร็ว"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/blackGray"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/productDetailReviewStar1IM"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/productDetailReviewStar2IM"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/productDetailReviewStar3IM"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/productDetailReviewStar4IM"
+                    android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/starpink"
+                    android:id="@+id/productDetailReviewStar5IM"
+                    android:paddingRight="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/productDetailReviewContentTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/blackGray"
+                android:text="ใช้เนื้อครีมขนาดเท่าเม็ดไข่มุกและแตะลงบนใบหน้า นวดวนเบาๆ จากกึ่งกลางใบหน้าออกสู่ด้านนอกให้ทั่วบริเวณ ใช้เป็นประจำทั้งในเวลาเช้าและกลางคืน หลังบำรุงผิวด้วยบิวตี้ เอ็สเซ็นส์ หรือหลังจากเอ็สเซ็นเชี่ยล พาวเวอร์ ถ้าความกระชับเป็นความกังวลหลัก"/>
+
+            <TextView
+                android:id="@+id/productDetailReviewNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:paddingBottom="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/blackGray"
+                android:text="Posted By Mr.John Doe - February 20, 2017"/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/background_bottom_layout_height"
+        android:background="@color/blackGray"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/productDetailPriceShowTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:text="120 P"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/getproductbtn"/>
+
+    </LinearLayout>
+
+</LinearLayout>
