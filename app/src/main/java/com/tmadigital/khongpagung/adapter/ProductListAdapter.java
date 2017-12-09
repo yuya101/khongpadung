@@ -69,9 +69,8 @@ public class ProductListAdapter extends BaseAdapter {
         }
 
         item.setTvProductName(productNamehtml);
-        item.setTvProductPoint(dao.getPrice() + " P" );
         item.setImageUrl(dao.getPicture());
-        item.setProductPosition(dao.getProid().toString());
+        item.setProductID(dao.getProid());
 
         if (position > lastPosition) {
             Animation anim = AnimationUtils.loadAnimation(parent.getContext(),

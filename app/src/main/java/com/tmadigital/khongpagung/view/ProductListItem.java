@@ -23,8 +23,10 @@ import com.inthecheesefactory.thecheeselibrary.view.BaseCustomViewGroup;
 import com.inthecheesefactory.thecheeselibrary.view.state.BundleSavedState;
 import com.tmadigital.khongpagung.R;
 import com.tmadigital.khongpagung.activity.LoginActivity;
+import com.tmadigital.khongpagung.activity.ProductDetailActivity;
 import com.tmadigital.khongpagung.dao.AddCartItemDao;
 import com.tmadigital.khongpagung.manager.HttpManager;
+import com.tmadigital.khongpagung.method.SamplinkMethod;
 
 import java.io.IOException;
 
@@ -36,17 +38,12 @@ import retrofit2.Response;
  * Created by nuuneoi on 11/16/2014.
  */
 public class ProductListItem extends BaseCustomViewGroup {
-    ImageView ivProductImage;
-    TextView tvProductName;
-    ImageView ivStar1;
-    ImageView ivStar2;
-    ImageView ivStar3;
-    ImageView ivStar4;
-    ImageView ivStar5;
-    TextView tvProductPoint;
-    Button btnGetProduct;
-    String productID;
-    private String memberID;
+
+    private ImageView product_image_iv;
+    private TextView product_name_tv;
+    private Button show_more_detail_btn;
+    private String proID;
+    private SamplinkMethod samplinkMethod;
 
     public ProductListItem(Context context) {
         super(context);
@@ -82,21 +79,20 @@ public class ProductListItem extends BaseCustomViewGroup {
 
     private void initInstances() {
         // findViewById here
-        ivProductImage = (ImageView) findViewById(R.id.ivProductImage);
-        tvProductName = (TextView) findViewById(R.id.tvProductName);
-        ivStar1 = (ImageView) findViewById(R.id.ivStar1);
-        ivStar2 = (ImageView) findViewById(R.id.ivStar2);
-        ivStar3 = (ImageView) findViewById(R.id.ivStar3);
-        ivStar4 = (ImageView) findViewById(R.id.ivStar4);
-        ivStar5 = (ImageView) findViewById(R.id.ivStar5);
-        tvProductPoint = (TextView) findViewById(R.id.tvProductPoint);
-        btnGetProduct = (Button) findViewById(R.id.btnGetProduct);
+        samplinkMethod = new SamplinkMethod();
 
-        btnGetProduct.setOnClickListener(addToCartListener);
+        product_image_iv = (ImageView) findViewById(R.id.product_image_iv);
+        product_name_tv = (TextView) findViewById(R.id.product_name_tv);
+        show_more_detail_btn = (Button) findViewById(R.id.show_more_detail_btn);
 
-
-        SharedPreferences sp = getContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
-        memberID = String.valueOf(sp.getInt("memberID", 0));
+        show_more_detail_btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+                intent.putExtra("proID", proID);
+                getContext().startActivity(intent);
+            }
+        });
     }
 
     private void initWithAttrs(AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -164,9 +160,8 @@ public class ProductListItem extends BaseCustomViewGroup {
         Glide.with(getContext())
                 .load(url)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .placeholder(R.color.white)
+                .placeholder(R.color.white)
                 .crossFade()
-                .override(400,400)
                 .centerCrop()
                 .listener(new RequestListener<String, GlideDrawable>() {
                     @Override
@@ -176,83 +171,17 @@ public class ProductListItem extends BaseCustomViewGroup {
 
                     @Override
                     public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                        ivProductImage.setImageResource(0);
-                        ivProductImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        product_image_iv.setImageResource(0);
+                        product_image_iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                         return false;
                     }
                 })
-                .into(ivProductImage);
-
-        /*
-           TODO: Glide Format Using Function
-           // Insert after .load()
-           .placeholder(Image From Drawable) = Show Image Before Real Image Load Complete
-           .error(Image From Drawable) = Show Image When Image Load Error
-           .transform() = Use for Make Source Image Mark By Circle Transformation Like Circle Image (Use In Menu User Image Circle)
-
-           We can download transformation from github to use with .transform() - Name Of Source is "glide-transformations". Can Load By Library Dependency
-
-           .diskCacheStrategy(DiskCacheStrategy.ALL) = Use In case This Image Use More Than 1 Times, If This Image Use 1 Time We not use this Method
-         */
+                .into(product_image_iv);
     }
 
     public void setTvProductName(String text) {
-        tvProductName.setText(text);
+        product_name_tv.setText(text);
     }
-
-    public void setTvProductPoint(String text) {
-        tvProductPoint.setText(text);
-    }
-
-    public void setProductPosition(String proID) {productID = proID;}
-
-
-    private void showToast(String text){
-        Toast.makeText(Contextor.getInstance().getContext(),
-                text,
-                Toast.LENGTH_SHORT)
-                .show();
-    }
-
-
-    final OnClickListener addToCartListener = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (Integer.parseInt(memberID) > 0) {
-                Call<AddCartItemDao> call = HttpManager.getInstance().getAddCartApiService().updateAddCartData(memberID, productID);
-                call.enqueue(new Callback<AddCartItemDao>() {
-                    @Override
-                    public void onResponse(Call<AddCartItemDao> call,
-                                           Response<AddCartItemDao> response) {
-                        if (response.isSuccessful()){
-                            AddCartItemDao cartItemDao = response.body();
-
-                            if (cartItemDao.getStatus().toString().equals("success")){
-                                showToast("เพิ่มสินค้าลงตะกร้าเรียบร้อยแล้วค่ะ.");
-                            }else{
-                                showToast("ไม่สามารถเพิ่มสินค้าลงตะกร้าได้ค่ะ\nกรุณาลองใหม่อีกครั้ง !");
-                            }  //------  if (cartItemDao.getStatus().toString().equals("success"))
-                        }else{
-                            // Handle
-                            try {
-                                showToast(response.errorBody().string());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }  //----  if (response.isSuccessful())
-                    }
-
-                    @Override
-                    public void onFailure(Call<AddCartItemDao> call,
-                                          Throwable t) {
-                        showToast(t.toString());
-                    }
-                });
-            }else{
-                Intent intent = new Intent(getContext(), LoginActivity.class);
-                getContext().startActivity(intent);
-            }  //-------  if (Integer.parseInt(memberID) > 0)
-        }
-    };
+    public void setProductID(String text) {proID = text;}
 }

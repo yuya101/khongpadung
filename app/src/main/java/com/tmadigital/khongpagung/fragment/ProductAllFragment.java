@@ -126,8 +126,6 @@ public class ProductAllFragment extends Fragment {
 
                     SharedPreferences sp = getContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
                     String memberID = String.valueOf(sp.getInt("memberID", 0));
-
-                    showToast("Load Complete");
                 } else {
                     // Handle
                     try {

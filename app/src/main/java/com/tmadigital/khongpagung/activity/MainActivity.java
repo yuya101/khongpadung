@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setLogo(R.drawable.samplink_title_logo);
 
         samplinkMethod.initMenuClickable(this);
     }

@@ -24,6 +24,7 @@ import com.facebook.HttpMethod;
 import com.facebook.login.LoginManager;
 import com.inthecheesefactory.thecheeselibrary.manager.Contextor;
 import com.tmadigital.khongpagung.R;
+import com.tmadigital.khongpagung.activity.AboutActivity;
 import com.tmadigital.khongpagung.activity.EventActivity;
 import com.tmadigital.khongpagung.activity.MainActivity;
 import com.tmadigital.khongpagung.activity.MapActivity;
@@ -122,7 +123,8 @@ public class SamplinkMethod {
         menuAboutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(activity, AboutActivity.class);
+                activity.startActivity(intent);
             }
         });
 

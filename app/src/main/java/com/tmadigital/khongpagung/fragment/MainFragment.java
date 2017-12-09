@@ -83,10 +83,6 @@ public class MainFragment extends Fragment {
                         return ProductAllFragment.newInstance();
                     case 1 :
                         return ProductNewFragment.newInstance();
-                    case 2 :
-                        return ProductNearGoneFragment.newInstance();
-                    case 3 :
-                        return ProductComingSoonFragment.newInstance();
                     default :
                         return null;
                 }
@@ -94,20 +90,16 @@ public class MainFragment extends Fragment {
 
             @Override
             public int getCount() {
-                return 4;
+                return 2;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
                 switch (position){
                     case 0 :
-                        return "All";
+                        return "SMEs สินค้าดี 4.0";
                     case 1 :
-                        return "New";
-                    case 2 :
-                        return "Nearly Gone";
-                    case 3 :
-                        return "Coming Soon";
+                        return "ของดี ของดัง ของขวัญปีใหม่";
                     default :
                         return "";
                 }
@@ -116,6 +108,8 @@ public class MainFragment extends Fragment {
 
         slidingTabLayout = (SlidingTabLayout) rootView.findViewById(R.id.slidingTabLayout);
         //slidingTabLayout.setDistributeEvenly(true);  // Make It Fit With Screen
+        //slidingTabLayout.bringToFront();
+        slidingTabLayout.setTabsBackgroundColor(getResources().getColor(R.color.slidingtab_bgcolor));
         slidingTabLayout.setViewPager(viewPager);
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
@@ -205,9 +199,9 @@ public class MainFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.basket_icon:
-                showMemberCart();
-                return true;
+//            case R.id.basket_icon:
+//                showMemberCart();
+//                return true;
             case R.id.category_icon:
                 showCategory();
                 return true;

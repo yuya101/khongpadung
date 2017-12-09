@@ -67,8 +67,8 @@ public class ProductDetailFragment extends Fragment {
     private TextView reviewTopicTV;
     private TableLayout productDetailShowReviewTableLayout;
     private String memberID;
+    private String proID;
 
-    ProductAllItemDao dao;
 
     public ProductDetailFragment() {
         super();
@@ -88,7 +88,6 @@ public class ProductDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
         init(savedInstanceState);
 
-        dao = getArguments().getParcelable("dao");
 
         if (savedInstanceState != null)
             onRestoreInstanceState(savedInstanceState);
@@ -109,6 +108,10 @@ public class ProductDetailFragment extends Fragment {
 
     @SuppressWarnings("UnusedParameters")
     private void initInstances(View rootView, Bundle savedInstanceState) {
+        Intent intent = getActivity().getIntent();
+        Bundle extras = intent.getExtras();
+        proID = extras.getString("proID", "");
+
         // Init 'View' instance(s) with rootView.findViewById here
         button = (ImageButton) rootView.findViewById(R.id.redeemProductBtn);
         button.setOnClickListener(redeemonclicklistener);
@@ -124,7 +127,7 @@ public class ProductDetailFragment extends Fragment {
         productDetailShowReviewTableLayout = (TableLayout) rootView.findViewById(R.id.productDetailShowReviewTableLayout);
 
 
-        Call<ProductDetailItemCollectionDao> call = HttpManager.getInstance().getProductDetailService().loadProductDetailData(dao.getProid());
+        Call<ProductDetailItemCollectionDao> call = HttpManager.getInstance().getProductDetailService().loadProductDetailData(proID);
         call.enqueue(new Callback<ProductDetailItemCollectionDao>() {
             @Override
             public void onResponse(Call<ProductDetailItemCollectionDao> call,
@@ -419,7 +422,7 @@ public class ProductDetailFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if (Integer.parseInt(memberID) > 0){
-                Call<AddCartItemDao> call = HttpManager.getInstance().getAddCartApiService().updateAddCartData(memberID, dao.getProid());
+                Call<AddCartItemDao> call = HttpManager.getInstance().getAddCartApiService().updateAddCartData(memberID, proID);
                 call.enqueue(new Callback<AddCartItemDao>() {
                     @Override
                     public void onResponse(Call<AddCartItemDao> call,

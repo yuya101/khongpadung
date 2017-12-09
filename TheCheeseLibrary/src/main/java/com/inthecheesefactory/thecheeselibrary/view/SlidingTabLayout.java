@@ -188,7 +188,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
         final PagerAdapter adapter = mViewPager.getAdapter();
         final View.OnClickListener tabClickListener = new TabClickListener();
 
-        Typeface fontRSU = Typeface.createFromAsset(getContext().getAssets(), "fonts/RSU_Regular.ttf");
+        Typeface fontRSU = Typeface.createFromAsset(getContext().getAssets(), "fonts/Kanit-Medium.ttf");
 
         for (int i = 0; i < adapter.getCount(); i++) {
             View tabView = null;
@@ -332,6 +332,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
         int dpInPixel = (int) (i * scale + 0.5f);
 
         return dpInPixel;
+    }
+
+    public void setTabsBackgroundColor(int color) {
+        mTabStrip.setBackgroundColor(color);
     }
 
 }

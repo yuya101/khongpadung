@@ -1,127 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:descendantFocusability="blocksDescendants">
+    android:background="@color/white">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/product_image_iv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:layout_height="120dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sk2" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:layout_gravity="center"
-            android:padding="0dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/ivProductImage"/>
+    <TextView
+        android:id="@+id/product_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:gravity="center|left"
+        android:lines="2"
+        android:paddingTop="0dp"
+        android:text="ชามตราไก่"
+        android:textColor="@color/blackGray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/show_more_detail_btn"
+        app:layout_constraintEnd_toEndOf="@+id/product_image_iv"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/product_image_iv"
+        app:layout_constraintTop_toBottomOf="@+id/product_image_iv" />
 
-        <TextView
-            android:id="@+id/tvProductName"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:text="SK-II SKIN SIGNATURE 3D REDEFINING MASK"
-            android:textSize="@dimen/text_17_size"
-            android:textStyle="bold"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:textColor="@color/blackGray"
-            android:layout_weight="0.88"
-            android:lineSpacingMultiplier="0.8" />
+    <Button
+        android:id="@+id/show_more_detail_btn"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/orange"
+        android:text="รายละเอียดเพิ่มเติม"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/product_name_tv"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/product_name_tv" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="0dp">
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/starpink"
-                android:id="@+id/ivStar1"
-                android:paddingRight="5dp"/>
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/starpink"
-                android:id="@+id/ivStar2"
-                android:paddingRight="5dp"/>
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/starpink"
-                android:id="@+id/ivStar3"
-                android:paddingRight="5dp"/>
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/starpink"
-                android:id="@+id/ivStar4"
-                android:paddingRight="5dp"/>
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/starpink"
-                android:id="@+id/ivStar5"
-                android:paddingRight="5dp"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvProductPoint"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="0dp"
-                android:text="200 P"
-                android:textSize="@dimen/text_20_size"
-                android:textAlignment="viewStart"
-                android:textColor="@color/blackGray"/>
-
-            <!--<ImageButton-->
-                <!--android:id="@+id/btnGetProduct"-->
-                <!--android:src="@drawable/getproductbtn"-->
-                <!--android:scaleType="fitCenter"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_weight="1"-->
-                <!--android:padding="1dp"-->
-                <!--android:layout_marginTop="5dp"-->
-                <!--android:focusable="false"/>-->
-
-            <Button style="@style/AppTheme.Button.Orange"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_height_size"
-                android:layout_weight="1"
-                android:text="แลกของ"
-                android:id="@+id/btnGetProduct"
-                android:enabled="true" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:background="@drawable/selector_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
