@@ -55,6 +55,8 @@ public class EventActivity extends AppCompatActivity {
 
         samplinkMethod = new SamplinkMethod();
 
+        samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
+
         //---- Create Toolbar In First Step
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +80,7 @@ public class EventActivity extends AppCompatActivity {
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/Kanit-Light.ttf");
         headerTopic.setTypeface(custom_font);
         headerTopic.setTextSize(getResources().getDimension(R.dimen.header_topic_size));
+        headerTopic.setText(getResources().getString(R.string.event_title));
 
         samplinkMethod.initMenuClickable(this);
     }

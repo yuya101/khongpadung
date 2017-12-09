@@ -26,6 +26,8 @@ import com.inthecheesefactory.thecheeselibrary.manager.Contextor;
 import com.tmadigital.khongpagung.R;
 import com.tmadigital.khongpagung.activity.EventActivity;
 import com.tmadigital.khongpagung.activity.MainActivity;
+import com.tmadigital.khongpagung.activity.MapActivity;
+import com.tmadigital.khongpagung.activity.VideoActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -128,7 +130,8 @@ public class SamplinkMethod {
         menuActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(activity, VideoActivity.class);
+                activity.startActivity(intent);
             }
         });
 
@@ -136,7 +139,8 @@ public class SamplinkMethod {
         menuMapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(activity, MapActivity.class);
+                activity.startActivity(intent);
             }
         });
     }

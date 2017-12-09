@@ -1,7 +1,10 @@
 <resources>
     <string name="facebook_app_id">1563711173937111</string>
+    <string name="youtube_api_key">AIzaSyBa6AR6nKFc-wc98kZvy6NcpgSkQzOS6fQ</string>
     <string name="app_name">ตลาดคลองผดุง</string>
     <string name="event_title">ตลาดคลองผดุงกรุงเกษม</string>
+    <string name="map_title">แผนที่ ตลาดคลองผดุงกรุงเกษม</string>
+    <string name="activity_title">กิจกรรมภายในงาน</string>
     <string name="open_drawer">Open Menu</string>
     <string name="close_drawer">Close Menu</string>
     <string name="create_account_topic">Create Account</string>

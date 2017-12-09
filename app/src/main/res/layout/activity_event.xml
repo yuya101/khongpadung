@@ -30,7 +30,7 @@
             android:layout_marginEnd="0dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:text="@string/event_title"
+            android:text=""
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/contentContainer"
             app:layout_constraintEnd_toEndOf="@+id/toolbar"

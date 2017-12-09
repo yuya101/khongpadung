@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
 
         samplinkMethod = new SamplinkMethod();
 
+        samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
+
         //---- Create Toolbar In First Step
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
