@@ -55,7 +55,7 @@ public class EventActivity extends AppCompatActivity {
 
         samplinkMethod = new SamplinkMethod();
 
-        samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
+        //samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
 
         //---- Create Toolbar In First Step
         toolbar = (Toolbar) findViewById(R.id.toolbar);

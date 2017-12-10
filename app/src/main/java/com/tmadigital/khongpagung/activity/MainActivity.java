@@ -27,13 +27,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Main
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
-    private Button menuHomeButton;
-    private Button menuRegisterButton;
-    private Button menuLogInButton;
-    private Button menuRedeemHistoryButton;
-    private Button menuPointHistoryButton;
-    private Button menuCartButton;
-    private Button menuLogOutButton;
     private SamplinkMethod samplinkMethod;
 
     @Override

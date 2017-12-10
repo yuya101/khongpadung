@@ -113,7 +113,7 @@ public class ProductComingSoonFragment extends Fragment {
 
     private void reloadData() {
         //----- Start To Call ApiService
-        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList("4", "");
+        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList("", "", "");
         call.enqueue(new Callback<ProductAllItemCollectionDao>() {
             @Override
             public void onResponse(Call<ProductAllItemCollectionDao> call,

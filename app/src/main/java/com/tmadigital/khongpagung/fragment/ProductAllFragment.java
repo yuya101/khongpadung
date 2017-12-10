@@ -113,7 +113,11 @@ public class ProductAllFragment extends Fragment {
 
     private void reloadData() {
         //----- Start To Call ApiService
-        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList("1", "");
+        SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
+        String typeID = String.valueOf(sp.getString("typeID", "2"));
+        String catID = String.valueOf(sp.getString("catID", ""));
+
+        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList(typeID, catID, "");
         call.enqueue(new Callback<ProductAllItemCollectionDao>() {
             @Override
             public void onResponse(Call<ProductAllItemCollectionDao> call,

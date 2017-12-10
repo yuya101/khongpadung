@@ -113,7 +113,7 @@ public class ProductNearGoneFragment extends Fragment {
 
     private void reloadData() {
         //----- Start To Call ApiService
-        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList("3", "");
+        Call<ProductAllItemCollectionDao> call = HttpManager.getInstance().getService().loadProductList("", "", "");
         call.enqueue(new Callback<ProductAllItemCollectionDao>() {
             @Override
             public void onResponse(Call<ProductAllItemCollectionDao> call,

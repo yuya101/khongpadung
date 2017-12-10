@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ProductAllItemCollectionDao {
     @SerializedName("status") private String status;
-    @SerializedName("products") private List<ProductAllItemDao> products;
+    @SerializedName("data") private List<ProductAllItemDao> products;
 
     public String getStatus() {
         return status;

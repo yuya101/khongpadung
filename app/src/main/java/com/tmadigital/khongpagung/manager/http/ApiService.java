@@ -14,8 +14,9 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    @GET("queryProductAndroid.php?service=productAll&orderBy=adddate&orderType=desc")
-    Call<ProductAllItemCollectionDao> loadProductList(@Query("selectProduct") String selectProduct,
+    @GET("queryProductAndroid.php?service=productAll")
+    Call<ProductAllItemCollectionDao> loadProductList(@Query("typeID") String typeID,
+                                                      @Query("cateID") String cateID,
                                                       @Query("productNameSearch") String productNameSearch);
 
 }

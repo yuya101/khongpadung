@@ -3,21 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item android:id="@+id/search_icon"
-        android:title="Search"
-        android:icon="@drawable/search_icon"
-        app:showAsAction="never"/>
+    <!--<item android:id="@+id/search_icon"-->
+        <!--android:title="Search"-->
+        <!--android:icon="@drawable/search_icon"-->
+        <!--app:showAsAction="never"/>-->
 
     <item android:id="@+id/category_icon"
-        android:title="Category"
+        android:title="ทั้งหมด"
         android:icon="@drawable/category_icon"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
 
-    <item android:id="@+id/basket_icon"
+    <item android:id="@+id/product_icon"
         android:icon="@drawable/basket_icon"
-        android:title="Cart"
-        app:actionLayout="@layout/custom_action_item_layout"
-        app:showAsAction="always"
+        android:title="สินค้า"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/service_icon"
+        android:icon="@drawable/basket_icon"
+        android:title="บริการ"
+        app:showAsAction="never"
         />
 
 </menu>

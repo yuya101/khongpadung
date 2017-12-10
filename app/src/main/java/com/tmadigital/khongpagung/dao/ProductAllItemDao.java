@@ -3,6 +3,7 @@ package com.tmadigital.khongpagung.dao;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -10,31 +11,76 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class ProductAllItemDao implements Parcelable {
-    @SerializedName("proid")         private String proid;
-    @SerializedName("name")         private String name;
-    @SerializedName("price")        private String price;
-    @SerializedName("pictureName")  private String pictureName;
-    @SerializedName("picture")      private String picture;
-    @SerializedName("starRate")     private int starRate;
-
+    @SerializedName("status")
+    @Expose
+    private String status;
+    @SerializedName("qrcode")
+    @Expose
+    private String qrcode;
+    @SerializedName("proid")
+    @Expose
+    private String proid;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("productDetail")
+    @Expose
+    private String productDetail;
+    @SerializedName("productCode")
+    @Expose
+    private String productCode;
+    @SerializedName("price")
+    @Expose
+    private String price;
+    @SerializedName("company_name")
+    @Expose
+    private String companyName;
+    @SerializedName("pictureName")
+    @Expose
+    private String pictureName;
+    @SerializedName("picture")
+    @Expose
+    private String picture;
+    @SerializedName("starRate")
+    @Expose
+    private Integer starRate;
 
     protected ProductAllItemDao(Parcel in) {
+        status = in.readString();
+        qrcode = in.readString();
         proid = in.readString();
         name = in.readString();
+        productDetail = in.readString();
+        productCode = in.readString();
         price = in.readString();
+        companyName = in.readString();
         pictureName = in.readString();
         picture = in.readString();
-        starRate = in.readInt();
+        if (in.readByte() == 0) {
+            starRate = null;
+        } else {
+            starRate = in.readInt();
+        }
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(status);
+        dest.writeString(qrcode);
         dest.writeString(proid);
         dest.writeString(name);
+        dest.writeString(productDetail);
+        dest.writeString(productCode);
         dest.writeString(price);
+        dest.writeString(companyName);
         dest.writeString(pictureName);
         dest.writeString(picture);
-        dest.writeInt(starRate);
+        if (starRate == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(starRate);
+        }
     }
 
     @Override
@@ -54,6 +100,22 @@ public class ProductAllItemDao implements Parcelable {
         }
     };
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getQrcode() {
+        return qrcode;
+    }
+
+    public void setQrcode(String qrcode) {
+        this.qrcode = qrcode;
+    }
+
     public String getProid() {
         return proid;
     }
@@ -70,12 +132,36 @@ public class ProductAllItemDao implements Parcelable {
         this.name = name;
     }
 
+    public String getProductDetail() {
+        return productDetail;
+    }
+
+    public void setProductDetail(String productDetail) {
+        this.productDetail = productDetail;
+    }
+
+    public String getProductCode() {
+        return productCode;
+    }
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
     public String getPrice() {
         return price;
     }
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public String getPictureName() {
@@ -94,11 +180,11 @@ public class ProductAllItemDao implements Parcelable {
         this.picture = picture;
     }
 
-    public int getStarRate() {
+    public Integer getStarRate() {
         return starRate;
     }
 
-    public void setStarRate(int starRate) {
+    public void setStarRate(Integer starRate) {
         this.starRate = starRate;
     }
 }

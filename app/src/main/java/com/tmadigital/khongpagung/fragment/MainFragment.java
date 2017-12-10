@@ -23,6 +23,8 @@ import com.inthecheesefactory.thecheeselibrary.view.SlidingTabLayout;
 import com.tmadigital.khongpagung.R;
 import com.tmadigital.khongpagung.activity.CartActivity;
 import com.tmadigital.khongpagung.activity.LoginActivity;
+import com.tmadigital.khongpagung.activity.MainActivity;
+import com.tmadigital.khongpagung.activity.ProductDetailActivity;
 import com.tmadigital.khongpagung.dao.ProductAllItemDao;
 
 
@@ -176,71 +178,62 @@ public class MainFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_main, menu);
 
-        MenuItem categoryIconItem = (MenuItem) menu.findItem(R.id.category_icon);
-        final MenuItem basketIconItem = (MenuItem) menu.findItem(R.id.basket_icon);
-        MenuItem searchIconItem = (MenuItem) menu.findItem(R.id.search_icon);
+        MenuItem category_icon = (MenuItem) menu.findItem(R.id.category_icon);
+        final MenuItem product_icon = (MenuItem) menu.findItem(R.id.product_icon);
+        MenuItem service_icon = (MenuItem) menu.findItem(R.id.service_icon);
 
-        searchIconItem.setVisible(isHidden());
+        category_icon.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            public Intent intent;
 
-        View actionView = MenuItemCompat.getActionView(basketIconItem);
-        textCartItemCount = (TextView) actionView.findViewById(R.id.cart_badge);
-
-        setupBadge();
-
-
-        actionView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                onOptionsItemSelected(basketIconItem);
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("typeID", "2");
+                editor.putString("catID", "");
+                editor.apply();
+
+                intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+
+                return true;
+            }
+        });
+
+        product_icon.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            public Intent intent;
+
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("typeID", "");
+                editor.putString("catID", "1");
+                editor.apply();
+
+                intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+
+                return true;
+            }
+        });
+
+        service_icon.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            public Intent intent;
+
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("typeID", "");
+                editor.putString("catID", "2");
+                editor.apply();
+
+                intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+
+                return true;
             }
         });
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-//            case R.id.basket_icon:
-//                showMemberCart();
-//                return true;
-            case R.id.category_icon:
-                showCategory();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-
-    private void showMemberCart() {
-        if (Integer.parseInt(memberID) > 0){
-            Intent intent = new Intent(getActivity(), CartActivity.class);
-            startActivity(intent);
-        }else{
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-        }
-    }
-
-
-    private void showCategory() {
-
-    }
-
-
-    private void setupBadge() {
-        if (textCartItemCount != null) {
-            if (mCartItemCount == 0) {
-                if (textCartItemCount.getVisibility() != View.GONE) {
-                    textCartItemCount.setVisibility(View.GONE);
-                }
-            } else {
-                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
-                if (textCartItemCount.getVisibility() != View.VISIBLE) {
-                    textCartItemCount.setVisibility(View.VISIBLE);
-                }
-            }
-        }
-    }
-
-
 }

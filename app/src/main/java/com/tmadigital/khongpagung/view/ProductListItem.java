@@ -135,7 +135,7 @@ public class ProductListItem extends BaseCustomViewGroup {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int fullwidth = MeasureSpec.getSize(widthMeasureSpec); // width in px
         int width = fullwidth;
-        int height = (int)(fullwidth * 1.45);
+        int height = (int)(fullwidth * 1.29);
 
         int newWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
                 width,

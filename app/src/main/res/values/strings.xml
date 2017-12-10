@@ -21,6 +21,7 @@
     <string name="cart_continue_shopping_text">ช็อปปิ้งต่อ</string>
     <string name="cart_all_product_list_price">ราคาสินค้าทั้งหมด</string>
     <string name="cart_free_text">ฟรี</string>
+    <string name="exchange_text_button">แลกของ</string>
     <string name="cart_transport_price_text">ค่าจัดส่งสินค้า</string>
     <string name="delete_product_in_cart_text">X นำออก</string>
     <string name="cart_member_remain_point_text">คะแนนที่ท่านมี</string>

@@ -49,7 +49,7 @@ public class MapActivity extends AppCompatActivity {
 
         samplinkMethod = new SamplinkMethod();
 
-        samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
+        //samplinkMethod.showLoading(this, "Please Wait", "Loading Data...");
 
         //---- Create Toolbar In First Step
         toolbar = (Toolbar) findViewById(R.id.toolbar);

@@ -5,9 +5,9 @@
     <!--<color name="colorPrimaryDark">#b57b2b</color>-->
     <color name="colorAccent">#FF4081</color>
     <color name="overlay_color">#80000000</color>
-    <color name="gray">#9E9E9E</color>
+    <color name="gray">#9e9e9e</color>
     <color name="blackGray">#424242</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
     <color name="orange">#FF9800</color>
     <color name="slidingtab_bgcolor">#c5a45c</color>
 </resources>

@@ -13,6 +13,7 @@ import com.tmadigital.khongpagung.manager.http.GeoDistrictApiService;
 import com.tmadigital.khongpagung.manager.http.GeoProvinceApiService;
 import com.tmadigital.khongpagung.manager.http.LoginApiService;
 import com.tmadigital.khongpagung.manager.http.ProductDetailApiService;
+import com.tmadigital.khongpagung.manager.http.ProductDetailNewApiService;
 import com.tmadigital.khongpagung.manager.http.ProductInCartApiService;
 import com.tmadigital.khongpagung.manager.http.RegisterApiService;
 import com.tmadigital.khongpagung.manager.http.RemoveProductInCartApiService;
@@ -26,6 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HttpManager {
 
     private static HttpManager instance;
+    private final ProductDetailNewApiService productDetailNewApiService;
 
     public static HttpManager getInstance() {
         if (instance == null)
@@ -52,7 +54,8 @@ public class HttpManager {
         mContext = Contextor.getInstance().getContext();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.samplink.com/includes/webservice/")
+                //.baseUrl("http://www.samplink.com/includes/webservice/")
+                .baseUrl("http://54.68.58.112/includes/webservice/")
                 .addConverterFactory(GsonConverterFactory.create())  //----  Add After Import Converter-gson Library Dependency
                 .build();
 
@@ -69,6 +72,7 @@ public class HttpManager {
         geoProvinceApiService = retrofit.create(GeoProvinceApiService.class);
         geoAmphorApiService = retrofit.create(GeoAmphorApiService.class);
         geoDistrictApiService = retrofit.create(GeoDistrictApiService.class);
+        productDetailNewApiService = retrofit.create(ProductDetailNewApiService.class);
     }
 
     public ApiService getService() {
@@ -98,4 +102,8 @@ public class HttpManager {
     public GeoAmphorApiService getGeoAmphorApiService() {return geoAmphorApiService;}
 
     public GeoDistrictApiService getGeoDistrictApiService() {return geoDistrictApiService;}
+
+    public ProductDetailNewApiService getProductDetailNewApiService() {
+        return productDetailNewApiService;
+    }
 }

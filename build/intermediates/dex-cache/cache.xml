@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.2"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Maximus/Documents/AndroidApplication/khongpadung/TheCheeseLibrary/build/intermediates/intermediate-jars/release/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.2"
+        sha1="adc58f3d0d22b2a954362d822b6060755f68d99f">
+        <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/33.jar" />
+    </item>
+
+</items>
