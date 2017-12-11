@@ -21,5 +21,15 @@
         sha1="adc58f3d0d22b2a954362d822b6060755f68d99f">
         <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/33.jar" />
     </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Maximus/.gradle/caches/transforms-1/files-1.1/html-textview-3.5.aar/23b1cdab7555c91ae552c3454cc5caf0/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.2"
+        sha1="088fc08780e035f2f8558577b6e13e9255c41526">
+        <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/34.jar" />
+    </item>
 
 </items>

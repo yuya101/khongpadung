@@ -2,9 +2,11 @@ package com.tmadigital.khongpagung.fragment;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,8 @@ import com.tmadigital.khongpagung.dao.ProductDetailNewHeaderItemDao;
 import com.tmadigital.khongpagung.manager.HttpManager;
 import com.tmadigital.khongpagung.method.SamplinkMethod;
 
+import org.sufficientlysecure.htmltextview.HtmlTextView;
+
 import java.io.IOException;
 
 import retrofit2.Call;
@@ -42,7 +46,7 @@ public class ProductDetailDescriptionFragment extends Fragment {
     private static String proID;
     private SamplinkMethod samplinkMethod;
     private Button exchange_button;
-    private TextView other_detail;
+    private HtmlTextView other_detail;
     private ProductDetailNewCollectionItemDao daoAll;
 
     public ProductDetailDescriptionFragment() {
@@ -85,7 +89,7 @@ public class ProductDetailDescriptionFragment extends Fragment {
         samplinkMethod = new SamplinkMethod();
 
         exchange_button = (Button) rootView.findViewById(R.id.exchange_button);
-        other_detail = (TextView) rootView.findViewById(R.id.other_detail);
+        other_detail = (HtmlTextView) rootView.findViewById(R.id.other_detail);
 
         exchange_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,7 +175,18 @@ public class ProductDetailDescriptionFragment extends Fragment {
         ProductDetailNewDescriptionItemDao desc = dao.getCategoryDescription().get(0);
 
         if(dao.getProductDescription().equals("")){
-            detail = dao.getProductDescription();
+            String propertyNamehtml;
+
+            if (Build.VERSION.SDK_INT >= 24)
+            {
+                propertyNamehtml = Html.fromHtml(dao.getProductDescription(), Html.FROM_HTML_MODE_LEGACY).toString();
+            }
+            else
+            {
+                propertyNamehtml = Html.fromHtml(dao.getProductDescription()).toString();
+            }
+
+            detail = propertyNamehtml;
             i = 1;
         }
 
@@ -376,9 +391,9 @@ public class ProductDetailDescriptionFragment extends Fragment {
         }
 
         if (detail.equals("")){
-            other_detail.setText("-");
+            other_detail.setHtml("-");
         }else{
-            other_detail.setText(detail);
+            other_detail.setHtml(detail);
         }
     }
 

@@ -26,6 +26,8 @@ import com.tmadigital.khongpagung.dao.ProductDetailNewCollectionItemDao;
 import com.tmadigital.khongpagung.manager.HttpManager;
 import com.tmadigital.khongpagung.method.SamplinkMethod;
 
+import org.sufficientlysecure.htmltextview.HtmlTextView;
+
 import java.io.IOException;
 
 import retrofit2.Call;
@@ -42,7 +44,7 @@ public class ProductDetailOverviewFragment extends Fragment {
     private static String proID;
     private ImageView product_image_iv;
     private TextView product_name_tv;
-    private TextView property_detail;
+    private HtmlTextView property_detail;
     private Button exchange_button;
     private SamplinkMethod samplinkMethod;
     private TextView other_title;
@@ -89,7 +91,7 @@ public class ProductDetailOverviewFragment extends Fragment {
 
         product_image_iv = (ImageView) rootView.findViewById(R.id.product_image_iv);
         product_name_tv = (TextView) rootView.findViewById(R.id.product_name_tv);
-        property_detail = (TextView) rootView.findViewById(R.id.property_detail);
+        property_detail = (HtmlTextView) rootView.findViewById(R.id.property_detail);
         other_title = (TextView) rootView.findViewById(R.id.other_title);
         exchange_button = (Button) rootView.findViewById(R.id.exchange_button);
 
@@ -204,26 +206,26 @@ public class ProductDetailOverviewFragment extends Fragment {
             if (Build.VERSION.SDK_INT >= 24)
             {
                 propertyNamehtml = Html.fromHtml(dao.getProductDetail().get(0).getProperty(), Html.FROM_HTML_MODE_LEGACY).toString();
-                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
-                propertyNamehtml = propertyNamehtml.replace("<p>", "");
-                propertyNamehtml = propertyNamehtml.replace("</p>", "");
-                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
-                propertyNamehtml = propertyNamehtml.replace("<br>", "");
-                propertyNamehtml = propertyNamehtml.replace("</br>", "");
-                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
+//                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
+//                propertyNamehtml = propertyNamehtml.replace("<p>", "");
+//                propertyNamehtml = propertyNamehtml.replace("</p>", "");
+//                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
+//                propertyNamehtml = propertyNamehtml.replace("<br>", "");
+//                propertyNamehtml = propertyNamehtml.replace("</br>", "");
+//                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
             }
             else
             {
                 propertyNamehtml = Html.fromHtml(dao.getProductDetail().get(0).getProperty()).toString();
-                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
-                propertyNamehtml = propertyNamehtml.replace("<p>", "");
-                propertyNamehtml = propertyNamehtml.replace("</p>", "");
-                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
-                propertyNamehtml = propertyNamehtml.replace("<br>", "");
-                propertyNamehtml = propertyNamehtml.replace("</br>", "");
-                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
+//                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
+//                propertyNamehtml = propertyNamehtml.replace("<p>", "");
+//                propertyNamehtml = propertyNamehtml.replace("</p>", "");
+//                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
+//                propertyNamehtml = propertyNamehtml.replace("<br>", "");
+//                propertyNamehtml = propertyNamehtml.replace("</br>", "");
+//                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
             }
-            property_detail.setText(propertyNamehtml);
+            property_detail.setHtml(propertyNamehtml);
         }
     }
 
