@@ -162,7 +162,6 @@ public class ProductListItem extends BaseCustomViewGroup {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.color.white)
                 .crossFade()
-                .centerCrop()
                 .listener(new RequestListener<String, GlideDrawable>() {
                     @Override
                     public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
@@ -172,7 +171,7 @@ public class ProductListItem extends BaseCustomViewGroup {
                     @Override
                     public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
                         product_image_iv.setImageResource(0);
-                        product_image_iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        //product_image_iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                         return false;
                     }

@@ -2,9 +2,11 @@ package com.tmadigital.khongpagung.fragment;
 
 import android.app.Dialog;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -119,7 +121,7 @@ public class ProductDetailOverviewFragment extends Fragment {
                                                            String model, Target<GlideDrawable> target,
                                                            boolean isFromMemoryCache, boolean isFirstResource) {
                                 qr_code_image.setImageResource(0);
-                                qr_code_image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                                //qr_code_image.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                                 return false;
                             }
@@ -170,7 +172,7 @@ public class ProductDetailOverviewFragment extends Fragment {
         Glide.with(getContext())
                 .load(dao.getProductDetail().get(0).getPicture1())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .placeholder(getResources().getDrawable(R.drawable.splash_title))
+                //.placeholder(getResources().getDrawable(R.drawable.splash_title))
                 .crossFade()
                 .listener(new RequestListener<String, GlideDrawable>() {
                     @Override
@@ -184,7 +186,7 @@ public class ProductDetailOverviewFragment extends Fragment {
                                                    String model, Target<GlideDrawable> target,
                                                    boolean isFromMemoryCache, boolean isFirstResource) {
                         product_image_iv.setImageResource(0);
-                        product_image_iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                        //product_image_iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                         return false;
                     }
@@ -194,10 +196,34 @@ public class ProductDetailOverviewFragment extends Fragment {
 
         product_name_tv.setText(dao.getProductDetail().get(0).getName());
 
-        if (dao.getProductDescription().equals("")){
+        if (dao.getProductDetail().get(0).getProperty().equals("")){
             property_detail.setText("-");
         }else{
-            property_detail.setText(dao.getProductDescription());
+            String propertyNamehtml;
+
+            if (Build.VERSION.SDK_INT >= 24)
+            {
+                propertyNamehtml = Html.fromHtml(dao.getProductDetail().get(0).getProperty(), Html.FROM_HTML_MODE_LEGACY).toString();
+                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
+                propertyNamehtml = propertyNamehtml.replace("<p>", "");
+                propertyNamehtml = propertyNamehtml.replace("</p>", "");
+                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
+                propertyNamehtml = propertyNamehtml.replace("<br>", "");
+                propertyNamehtml = propertyNamehtml.replace("</br>", "");
+                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
+            }
+            else
+            {
+                propertyNamehtml = Html.fromHtml(dao.getProductDetail().get(0).getProperty()).toString();
+                propertyNamehtml = propertyNamehtml.replace("&AMP;", "&");
+                propertyNamehtml = propertyNamehtml.replace("<p>", "");
+                propertyNamehtml = propertyNamehtml.replace("</p>", "");
+                propertyNamehtml = propertyNamehtml.replace("&nbsp;", " ");
+                propertyNamehtml = propertyNamehtml.replace("<br>", "");
+                propertyNamehtml = propertyNamehtml.replace("</br>", "");
+                propertyNamehtml = propertyNamehtml.replace("<br />", "\n");
+            }
+            property_detail.setText(propertyNamehtml);
         }
     }
 

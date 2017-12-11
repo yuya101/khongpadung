@@ -15,27 +15,41 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".activity.ProductDetailActivity"/>
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.CartActivity" />
-        <activity android:name=".activity.CheckOutActivity" />
-        <activity android:name=".activity.CheckPointHistoryActivity" />
-        <activity android:name=".activity.CheckRedeemProductHistoryActivity" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.ThankYouActivity"></activity>
-        <activity android:name=".activity.EventActivity"></activity>
-        <activity android:name=".activity.MapActivity"></activity>
-        <activity android:name=".activity.VideoActivity"></activity>
-        <activity android:name=".activity.AboutActivity"></activity>
+        <activity android:name=".activity.ProductDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.CartActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.CheckOutActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.CheckPointHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.CheckRedeemProductHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ThankYouActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.EventActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.MapActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.VideoActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.AboutActivity"
+            android:screenOrientation="portrait"></activity>
 
 
         <!-- Facebook -->

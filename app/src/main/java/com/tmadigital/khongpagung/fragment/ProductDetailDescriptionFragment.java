@@ -170,6 +170,11 @@ public class ProductDetailDescriptionFragment extends Fragment {
         ProductDetailNewHeaderItemDao header = dao.getCategoryHeader().get(0);
         ProductDetailNewDescriptionItemDao desc = dao.getCategoryDescription().get(0);
 
+        if(dao.getProductDescription().equals("")){
+            detail = dao.getProductDescription();
+            i = 1;
+        }
+
         if (!header.getHeader1().equals("")){
             if (i > 0){
                 detail = detail + "\n";
