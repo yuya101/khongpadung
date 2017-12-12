@@ -1,12 +1,18 @@
 package com.tmadigital.khongpagung.activity;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -126,5 +132,50 @@ public class VideoActivity extends AppCompatActivity {
 //
 //        AlertDialog alert = builder.create();
 //        alert.show();
+    }
+
+
+
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String title = intent.getStringExtra("title");
+            String message = intent.getStringExtra("message");
+
+            final AlertDialog.Builder builder =
+                    new AlertDialog.Builder(VideoActivity.this);
+            builder.setTitle(title);
+            builder.setMessage(message);
+            builder.setPositiveButton("แสดง", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.dismiss();
+
+                    Intent intentAct = new Intent(getApplication(), MainActivity.class);
+                    startActivity(intentAct);
+                }
+            });
+            builder.setNegativeButton("ปิด", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.show();
+        }
+
+    };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
+                new IntentFilter("myFunction"));
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
     }
 }

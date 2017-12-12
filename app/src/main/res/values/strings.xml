@@ -1,6 +1,12 @@
 <resources>
     <string name="facebook_app_id">1563711173937111</string>
     <string name="youtube_api_key">AIzaSyBa6AR6nKFc-wc98kZvy6NcpgSkQzOS6fQ</string>
+    <string name="server_api_key">AIzaSyDrgzGuNzCWEAn2Nxzh4TnkA5rIwc3NrtE</string>
+    <string name="sender_id">585821625750</string>
+    <string name="pusher_app_id">444145</string>
+    <string name="pusher_key">6d9b1e52e10b8509dfcc</string>
+    <string name="pusher_secret">7e6b88c6371266bc5a01</string>
+    <string name="pusher_cluster">ap1</string>
     <string name="app_name">ตลาดคลองผดุง</string>
     <string name="event_title">ตลาดคลองผดุงกรุงเกษม</string>
     <string name="map_title">แผนที่ ตลาดคลองผดุงกรุงเกษม</string>

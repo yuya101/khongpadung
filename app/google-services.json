@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "585821625750",
+    "firebase_url": "https://khongpadung.firebaseio.com",
+    "project_id": "khongpadung",
+    "storage_bucket": "khongpadung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585821625750:android:bdc1c7516ca64fca",
+        "android_client_info": {
+          "package_name": "com.tmadigital.khongpagung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585821625750-qkrpp5a0kbe8c6663bk3ivvdnsel0pt9.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585821625750-42r5g1bvvbaq5utssqgv5682afnli64c.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585821625750-vptqbcm6f1fipcr1a7tqr93r0h5mrlqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1pKpg99yF9T3yXmF7Ye2U9wGA5QkCXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

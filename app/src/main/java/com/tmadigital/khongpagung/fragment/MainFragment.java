@@ -223,11 +223,11 @@ public class MainFragment extends Fragment {
 
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("typeID", "");
-                editor.putString("catID", "2");
-                editor.apply();
+//                SharedPreferences sp = getContext().getSharedPreferences("product", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sp.edit();
+//                editor.putString("typeID", "");
+//                editor.putString("catID", "2");
+//                editor.apply();
 
                 intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);

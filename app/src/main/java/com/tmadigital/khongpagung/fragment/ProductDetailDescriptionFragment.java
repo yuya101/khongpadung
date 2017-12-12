@@ -174,7 +174,7 @@ public class ProductDetailDescriptionFragment extends Fragment {
         ProductDetailNewHeaderItemDao header = dao.getCategoryHeader().get(0);
         ProductDetailNewDescriptionItemDao desc = dao.getCategoryDescription().get(0);
 
-        if(dao.getProductDescription().equals("")){
+        if(!dao.getProductDescription().equals("")){
             String propertyNamehtml;
 
             if (Build.VERSION.SDK_INT >= 24)
