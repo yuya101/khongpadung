@@ -33,6 +33,16 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/Maximus/.gradle/caches/transforms-1/files-1.1/subsampling-scale-image-view-3.9.0.aar/c8e0148730cb5589df11adc46b15bdd4/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.2"
+        sha1="c2ac2f4c696c3e096ae3ba9d65f8c3792af5eb9b">
+        <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/57.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/Maximus/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/069fcd040488cbafc522d399fe3ba155/jars/classes.jar"
         jumboMode="false"
         min-sdk-version="15"
@@ -160,6 +170,16 @@
         revision="27.0.2"
         sha1="4504ae3ec47953f3d0c324dc66996aecfb7fbb5c">
         <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Maximus/.gradle/caches/transforms-1/files-1.1/exifinterface-26.1.0.aar/d0adcb0b2c1af5e231e9ab0dd2d38b29/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.2"
+        sha1="1a10332e561dbad9fd003560979e6202383d0d2c">
+        <dex dex="/Users/Maximus/Documents/AndroidApplication/khongpadung/app/build/intermediates/transforms/preDex/release/58.jar" />
     </item>
     <item
         is-multidex="false"

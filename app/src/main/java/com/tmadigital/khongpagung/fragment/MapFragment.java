@@ -3,10 +3,14 @@ package com.tmadigital.khongpagung.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.tmadigital.khongpagung.R;
 
 
@@ -50,6 +54,37 @@ public class MapFragment extends Fragment {
 
     private void initInstances(View rootView) {
 
+        ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
+        viewPager.setAdapter(new FragmentStatePagerAdapter(getChildFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                switch (position){
+                    case 0 :
+                        return MapRootDetailFragment.newInstance();
+                    case 1 :
+                        return MapPlanDetailFragment.newInstance();
+                    default :
+                        return null;
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                switch (position){
+                    case 0 :
+                        return "แผนที่";
+                    case 1 :
+                        return "ของดี ของดัง ของขวัญปีใหม่";
+                    default :
+                        return "";
+                }
+            }
+        });
     }
 
 
