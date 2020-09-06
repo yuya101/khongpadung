@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.inthecheesefactory.thecheeselibrary.view.SlidingTabLayout;
 import com.tmadigital.khongpagung.R;
 import com.tmadigital.khongpagung.activity.CartActivity;
 import com.tmadigital.khongpagung.activity.LoginActivity;
+import com.tmadigital.khongpagung.activity.MainActivity;
 import com.tmadigital.khongpagung.dao.ProductAllItemDao;
 
 
@@ -30,7 +32,6 @@ import com.tmadigital.khongpagung.dao.ProductAllItemDao;
  * Created by nuuneoi on 11/16/2014.
  */
 public class EventFragment extends Fragment {
-
 
 
     public EventFragment() {
@@ -65,7 +66,14 @@ public class EventFragment extends Fragment {
     }
 
     private void initInstances(View rootView) {
-
+        ImageButton event_image = (ImageButton) rootView.findViewById(R.id.event_image);
+        event_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
